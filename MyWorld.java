@@ -29,5 +29,6 @@ public class MyWorld extends World
         GreenfootImage background = getBackground();
         background.setColor(Color.BLACK);
         background.fill();
+        
     }
 }
