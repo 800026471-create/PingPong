@@ -1,4 +1,6 @@
-public class Scoreboard  
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
+public class Scoreboard extends MyWorld
 {
     private int p=0;
     private int ai=0;
