@@ -18,6 +18,14 @@ public class MyWorld extends World
         super(900, 580, 1); 
         prepare();
         addObject(new Ball(), 450, 290);
+        
+        // Converting scores to strings
+        String playerScoreString = String.valueOf(Scoreboard.playerScore);
+        String botScoreString = String.valueOf(Scoreboard.botScore);
+        
+        showText(playerScoreString, 350, 50);
+        showText(botScoreString, 650, 50); 
+        
     }
     
     /**
