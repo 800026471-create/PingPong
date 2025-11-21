@@ -14,16 +14,10 @@ public class PlayerMovement extends Actor {
     private long start = System.currentTimeMillis();
 
     public void act() {
-        checkTimer();
         checkMovement();
     }
 
-    private void checkTimer() {
-        if ((System.currentTimeMillis() - start) >= 10000) {
-            start = System.currentTimeMillis();
-            distance = distance / 2;
-        }
-    }
+   
 
     private void checkMovement() {
         if (Greenfoot.isKeyDown("w")) {
