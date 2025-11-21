@@ -5,29 +5,32 @@
  * 
  * @Harry Zhou
  * @11/18/2025
- */
+ * 
+**/
 import greenfoot.*;
-public class PlayerMovement extends Actor{
-  private int distance = 10;
-  private long start = 0;
-  
-  public void counter(){
-      start = System.currentTimeMillis();
-  }
-  public void move(){
-      if((System.currentTimeMillis()-start)>= 10000){
-          start = System.currentTimeMillis();
-          distance = distance/2;
-      }
-      if(Greenfoot.isKeyDown("w")){
-          setLocation(getX(),getY()-distance);
-      }
-      if(Greenfoot.isKeyDown("s")){
-          setLocation(getX(),getY()+distance);
-      }
-  }
-    
-    
-    
 
+public class PlayerMovement extends Actor {
+    private int distance = 10;
+    private long start = System.currentTimeMillis();
+
+    public void act() {
+        checkTimer();
+        checkMovement();
+    }
+
+    private void checkTimer() {
+        if ((System.currentTimeMillis() - start) >= 10000) {
+            start = System.currentTimeMillis();
+            distance = distance / 2;
+        }
+    }
+
+    private void checkMovement() {
+        if (Greenfoot.isKeyDown("w")) {
+            setLocation(getX(), getY() - distance);
+        }
+        if (Greenfoot.isKeyDown("s")) {
+            setLocation(getX(), getY() + distance);
+        }
+    }
 }
